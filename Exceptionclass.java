@@ -16,7 +16,7 @@ public class Exceptionclass{
         }
     }
     public static void main(String[] args) {
-        analyseMood amd = new analyseMood("Happy");
+        analyseMood amd = new analyseMood(null);
         String input = amd.msg;
 
         if(input == "Happy"){
@@ -27,12 +27,20 @@ public class Exceptionclass{
                 System.out.println(e.toString());
             }
         }
-        else{
+        else if(input == "Sad"){
             try{
                 throw new MoodAnalyser();
             }
             catch(Exception e){
                 System.out.println(e.getMessage());
+            }
+        }
+        else{
+            try{
+                throw new IllegalArgumentException();
+            }
+            catch(Exception e){
+                System.out.println("This is an Invalid mood");
             }
         }
         
