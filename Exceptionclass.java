@@ -1,3 +1,9 @@
+    class analyseMood{
+    String msg;
+    public analyseMood(String msg){
+        this.msg = msg;
+    }
+}
 public class Exceptionclass{
     static class MoodAnalyser extends Exception{
         @Override
@@ -9,13 +15,9 @@ public class Exceptionclass{
             return "Sad Mood";
         }
     }
-
-    static String analyseMood(String msg){
-        return msg;
-    }
-
     public static void main(String[] args) {
-        String input = analyseMood("Sad");
+        analyseMood amd = new analyseMood("Happy");
+        String input = amd.msg;
 
         if(input == "Happy"){
             try{
@@ -35,6 +37,4 @@ public class Exceptionclass{
         }
         
      }
-
-  
 }
